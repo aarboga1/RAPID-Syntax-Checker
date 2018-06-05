@@ -27,7 +27,7 @@ namespace RAPID_Syntax_Checker
 
         private void helloworld_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hello World");
+            MessageBox.Show("This is on branch rapid_syntax_test");
         }
     }
 }
