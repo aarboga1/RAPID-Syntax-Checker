@@ -1,4 +1,0 @@
-#Visual Studio files
-*.user
-bin
-obj
