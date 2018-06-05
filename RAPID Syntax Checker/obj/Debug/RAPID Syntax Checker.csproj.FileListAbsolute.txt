@@ -1,0 +1,15 @@
+D:\Users\alexa\Dropbox\Projects\Programming\RAPID-Syntax-Checker\RAPID Syntax Checker\bin\Debug\RAPID Syntax Checker.exe.config
+D:\Users\alexa\Dropbox\Projects\Programming\RAPID-Syntax-Checker\RAPID Syntax Checker\bin\Debug\RAPID Syntax Checker.exe
+D:\Users\alexa\Dropbox\Projects\Programming\RAPID-Syntax-Checker\RAPID Syntax Checker\bin\Debug\RAPID Syntax Checker.pdb
+D:\Users\alexa\Dropbox\Projects\Programming\RAPID-Syntax-Checker\RAPID Syntax Checker\obj\Debug\RAPID Syntax Checker.csprojAssemblyReference.cache
+D:\Users\alexa\Dropbox\Projects\Programming\RAPID-Syntax-Checker\RAPID Syntax Checker\obj\Debug\MainWindow.g.cs
+D:\Users\alexa\Dropbox\Projects\Programming\RAPID-Syntax-Checker\RAPID Syntax Checker\obj\Debug\App.g.cs
+D:\Users\alexa\Dropbox\Projects\Programming\RAPID-Syntax-Checker\RAPID Syntax Checker\obj\Debug\RAPID Syntax Checker_MarkupCompile.cache
+D:\Users\alexa\Dropbox\Projects\Programming\RAPID-Syntax-Checker\RAPID Syntax Checker\obj\Debug\RAPID Syntax Checker_MarkupCompile.lref
+D:\Users\alexa\Dropbox\Projects\Programming\RAPID-Syntax-Checker\RAPID Syntax Checker\obj\Debug\MainWindow.baml
+D:\Users\alexa\Dropbox\Projects\Programming\RAPID-Syntax-Checker\RAPID Syntax Checker\obj\Debug\RAPID Syntax Checker.g.resources
+D:\Users\alexa\Dropbox\Projects\Programming\RAPID-Syntax-Checker\RAPID Syntax Checker\obj\Debug\RAPID_Syntax_Checker.Properties.Resources.resources
+D:\Users\alexa\Dropbox\Projects\Programming\RAPID-Syntax-Checker\RAPID Syntax Checker\obj\Debug\RAPID Syntax Checker.csproj.GenerateResource.cache
+D:\Users\alexa\Dropbox\Projects\Programming\RAPID-Syntax-Checker\RAPID Syntax Checker\obj\Debug\RAPID Syntax Checker.csproj.CoreCompileInputs.cache
+D:\Users\alexa\Dropbox\Projects\Programming\RAPID-Syntax-Checker\RAPID Syntax Checker\obj\Debug\RAPID Syntax Checker.exe
+D:\Users\alexa\Dropbox\Projects\Programming\RAPID-Syntax-Checker\RAPID Syntax Checker\obj\Debug\RAPID Syntax Checker.pdb
