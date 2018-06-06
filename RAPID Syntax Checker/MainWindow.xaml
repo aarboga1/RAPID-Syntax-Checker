@@ -23,6 +23,7 @@
             <Menu DockPanel.Dock="Top" Width="Auto" Height="19">
                 <MenuItem Header="_File">
                     <MenuItem Header="_Exit" Click="Exit_Click"/>
+                    <MenuItem Header="_Open" Click="Open_Click"/>
                 </MenuItem>
 
             </Menu>
