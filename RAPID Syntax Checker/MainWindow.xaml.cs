@@ -20,14 +20,21 @@ namespace RAPID_Syntax_Checker
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region [Constructor]
         public MainWindow()
         {
             InitializeComponent();
-        }
 
-        private void helloworld_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("This is on branch rapid_syntax_test");
         }
+        #endregion
+
+        #region [Event Handlers]
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        #endregion
+
+
     }
 }
