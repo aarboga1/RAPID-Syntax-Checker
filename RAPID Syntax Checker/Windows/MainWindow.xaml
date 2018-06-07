@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RAPID_Syntax_Checker"
         mc:Ignorable="d"
-        Title="MainWindow" WindowState="Maximized"
+        Title="RAPID Syntax Checker" WindowState="Maximized"
         Background="#262728">
 
     <Grid>
@@ -37,7 +37,9 @@
 
         <!-- Module Viewer Text Box -->
         <GridSplitter Grid.Column="1" Grid.Row ="1" HorizontalAlignment="Stretch"  Width ="2" Margin="0,20,0,20" Background="#FF8E3B1A"  />
-        <RichTextBox Grid.Column="2" Grid.Row="1" Margin="7,9.8,10.2,7"/>
+        <TextBox Name="ModuleViewer" Grid.Column="2" Grid.Row="1" Margin="7,9.8,10.2,7" VerticalScrollBarVisibility="Visible">
+            Open a module file to view the contents...
+        </TextBox>
 
         <!-- Output Window -->
         <GridSplitter Grid.Row="2" Grid.ColumnSpan="3" Height="2"  VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="20,0,20,0" Background="#FF8E3B1A" />

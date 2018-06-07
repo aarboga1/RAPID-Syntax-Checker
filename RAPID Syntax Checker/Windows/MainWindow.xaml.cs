@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,13 @@ namespace RAPID_Syntax_Checker
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region [Variables]
+        public static string modulename;
+        #endregion
+
         #region [Constructor]
+   
+        // Initializes Main Window
         public MainWindow()
         {
             InitializeComponent();
@@ -31,14 +38,17 @@ namespace RAPID_Syntax_Checker
         #endregion
 
         #region [Event Handlers]
+        // Click Event For Exiting Window
         private void Exit_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        // Click Event for Opening Module File
         private void Open_Click(object sender, EventArgs e)
         {
             Open_File();
+            Set_Module_Editor_Text(modulename);
 
         }
         #endregion
@@ -46,19 +56,30 @@ namespace RAPID_Syntax_Checker
         #region [Commands]
         private static void Open_File()
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Open RGcode File",
+                Filter = "MOD Files (*.mod)| *.mod"
+            };
 
-            openFileDialog.Title = "Open RGcode File";
-            openFileDialog.Filter = "MOD Files (*.mod)| *.mod";
-            
             // Open window and check if file is valid
             if (openFileDialog.ShowDialog() == true)
             {
-                MessageBox.Show("It worked");
+                modulename = openFileDialog.FileName;
             }
 
         }
+
+        public void Set_Module_Editor_Text(string my_modulename)
+        {
+           
+            ModuleViewer.Text = File.ReadAllText(my_modulename);
+            
+        }
         #endregion
+
 
     }
 }
+
+
