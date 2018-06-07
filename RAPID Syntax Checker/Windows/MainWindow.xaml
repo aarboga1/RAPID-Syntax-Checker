@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RAPID_Syntax_Checker"
+        xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
         mc:Ignorable="d"
         Title="RAPID Syntax Checker" WindowState="Maximized"
         Background="#262728">
@@ -29,6 +30,11 @@
                     <MenuItem Header="_Exit" Click="Exit_Click"/>
                     <MenuItem Header="_Open" Click="Open_Click"/>
                 </MenuItem>
+                <MenuItem Header="_Font">
+                    <MenuItem Name="tenpt" Header="_10pt" IsCheckable="True" Click="tencheck"/>
+                    <MenuItem Name ="twelvept" Header="_12pt" IsCheckable="True" IsChecked="True" Click="twelvecheck"/>
+                    <MenuItem Name ="fourteenpt" Header="_14pt" IsCheckable="True" Click="fourteencheck"/>
+                </MenuItem>
             </Menu>
         </DockPanel>
 
@@ -37,13 +43,15 @@
 
         <!-- Module Viewer Text Box -->
         <GridSplitter Grid.Column="1" Grid.Row ="1" HorizontalAlignment="Stretch"  Width ="2" Margin="0,20,0,20" Background="#FF8E3B1A"  />
-        <TextBox Name="ModuleViewer" Grid.Column="2" Grid.Row="1" Margin="7,9.8,10.2,7" VerticalScrollBarVisibility="Visible">
+        <avalonEdit:TextEditor Name="ModuleViewer" Grid.Column="2" Grid.Row="1" Margin="7,9.8,10.2,7" VerticalScrollBarVisibility="Visible">
             Open a module file to view the contents...
-        </TextBox>
+        </avalonEdit:TextEditor>
 
         <!-- Output Window -->
         <GridSplitter Grid.Row="2" Grid.ColumnSpan="3" Height="2"  VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="20,0,20,0" Background="#FF8E3B1A" />
         <TextBox Grid.Column="0" Grid.Row="3"  Grid.ColumnSpan ="3" Margin="10,5,10.2,7"/>
+        
+   
 
 
     </Grid>

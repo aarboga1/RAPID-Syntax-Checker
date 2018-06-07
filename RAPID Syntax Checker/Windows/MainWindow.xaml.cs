@@ -33,7 +33,7 @@ namespace RAPID_Syntax_Checker
         public MainWindow()
         {
             InitializeComponent();
-
+            Set_Font_Size();
         }
         #endregion
 
@@ -51,9 +51,34 @@ namespace RAPID_Syntax_Checker
             Set_Module_Editor_Text(modulename);
 
         }
+
+        private void tencheck(object sender, RoutedEventArgs e)
+        {
+            twelvept.IsChecked = false;
+            fourteenpt.IsChecked = false;
+
+            Set_Font_Size();
+        }
+
+        private void twelvecheck(object sender, RoutedEventArgs e)
+        {
+            tenpt.IsChecked = false;
+            fourteenpt.IsChecked = false;
+
+            Set_Font_Size();
+        }
+
+        private void fourteencheck(object sender, RoutedEventArgs e)
+        {
+            twelvept.IsChecked = false;
+            tenpt.IsChecked = false;
+
+            Set_Font_Size();
+        }
         #endregion
 
         #region [Commands]
+        // Opens File Dialog 
         private static void Open_File()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
@@ -70,11 +95,29 @@ namespace RAPID_Syntax_Checker
 
         }
 
+        // Sets text editor text
         public void Set_Module_Editor_Text(string my_modulename)
         {
            
             ModuleViewer.Text = File.ReadAllText(my_modulename);
             
+        }
+
+        // Sets the font size of the editor
+        public void Set_Font_Size()
+        {
+            if (tenpt.IsChecked == true)
+            {
+                ModuleViewer.FontSize = 10;
+            }
+            else if (twelvept.IsChecked == true)
+            {
+                ModuleViewer.FontSize = 12;
+            }
+            else if (fourteenpt.IsChecked == true)
+            {
+                ModuleViewer.FontSize = 14;
+            }
         }
         #endregion
 
