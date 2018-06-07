@@ -60,6 +60,5 @@ namespace RAPID_Syntax_Checker
         }
         #endregion
 
-
     }
 }
