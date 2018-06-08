@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RAPID_Syntax_Checker.Tools;
 
 
 namespace RAPID_Syntax_Checker
@@ -34,6 +35,7 @@ namespace RAPID_Syntax_Checker
         {
             InitializeComponent();
             Set_Font_Size();
+
         }
         #endregion
 
@@ -92,6 +94,8 @@ namespace RAPID_Syntax_Checker
             {
                 modulename = openFileDialog.FileName;
             }
+
+            Syntax syntax = new Syntax(modulename);
 
         }
 
