@@ -1,6 +1,7 @@
 .vs/
 RAPID Syntax Checker/bin/
 RAPID Syntax Checker/obj/
+RAPID Syntax Checker/MetaData/
 packages/
 tatus
-*MetaFile.txt
+
