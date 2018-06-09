@@ -22,7 +22,7 @@ namespace RAPID_Syntax_Checker.Tools
         {
             _filepath = my_filepath;
             _line_stop_number = Find_stop();
-            write_metadata();
+            get_lines();
         }
         #endregion
 
@@ -70,15 +70,30 @@ namespace RAPID_Syntax_Checker.Tools
             // Clear the metadata file
             File.Create(metafile_dir).Close();
 
+            // Open file for writing
             StreamWriter streamWriter = new StreamWriter(metafile_dir);
 
             string[] file_line = File.ReadAllLines(_filepath);
 
-            for (int i = 0; i < file_line.Length; i++ )
+            for ( int i = 0; i < file_line.Length; i++ )
             {
-                streamWriter.Write(file_line[i] + "\r\n");
+                // Fix indentation
+                switch (i)
+                {
+                    case 17:
+                    case 18:
+                    case 19:
+                    case 20:
+                    case 22:
+                    case 23:
+                    case 26:
+                        streamWriter.Write("      " + file_line[i] + "\r\n");
+                        break;
+                    default:
+                        streamWriter.Write(file_line[i] + "\r\n");
+                        break;
+                }
             }
-
             streamWriter.Close();
         }
 
