@@ -97,6 +97,13 @@ namespace RAPID_Syntax_Checker.Tools
             streamWriter.Close();
         }
 
+        public void Check_Syntax()
+        {
+            string[] lines = File.ReadAllLines(_filepath);
+
+            // using try and throwing errors 
+        }
+
         #endregion
 
     }

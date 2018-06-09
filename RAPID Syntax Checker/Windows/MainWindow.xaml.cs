@@ -57,6 +57,11 @@ namespace RAPID_Syntax_Checker
 
         }
 
+        private void Check_Syntax_Click(object sender, EventArgs e)
+        {
+            // Call Check Syntax Function
+        }
+
         private void tencheck(object sender, RoutedEventArgs e)
         {
             twelvept.IsChecked = false;
