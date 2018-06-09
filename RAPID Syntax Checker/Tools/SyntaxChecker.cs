@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Documents;
 
 namespace RAPID_Syntax_Checker.Tools
 {
@@ -15,6 +18,8 @@ namespace RAPID_Syntax_Checker.Tools
         private string project_directory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
         int _line_stop_number;
         private string line_18, line_19, line_20, line_21, line_23, line_24, line_27, line_stop;
+
+        public Brush Red { get; private set; }
         #endregion
 
         #region [Constructor]
@@ -29,7 +34,8 @@ namespace RAPID_Syntax_Checker.Tools
         #region [Functions]
         public void get_lines()
         {
-            // Read lines into a string array
+
+            // Read lines from meta data into a string array
             string[] lines = File.ReadAllLines(_filepath);
             line_18 = lines[17]; // MoveStn1ToFloorPrint;
             line_19 = lines[18]; // InitializeService;
@@ -97,14 +103,140 @@ namespace RAPID_Syntax_Checker.Tools
             streamWriter.Close();
         }
 
-        public void Check_Syntax()
+        #region [Main Syntax Checker]
+        public void Check_Syntax(TextBlock outputwindow)
         {
-            string[] lines = File.ReadAllLines(_filepath);
+            outputwindow.Text = String.Empty;
 
-            // using try and throwing errors 
+            string message_box_info = null;
+            Run run;
+
+            if (!line_18.Contains("MoveStn1ToFloorPrint;"))
+            {
+                run = new Run("Missing: " + "MoveStn1ToFloorPrint;" + "\r\n");
+                run.Foreground = Brushes.Red;
+                outputwindow.Inlines.Add(run);
+                message_box_info = message_box_info + "Missing: " + "MoveStn1ToFloorPrint;" + "\r\n";
+            }
+            else
+            {
+                run = new Run("Found: " + "MoveStn1ToFloorPrint;" + "\r\n");
+                run.Foreground = Brushes.Green;
+                outputwindow.Inlines.Add(run);
+            }
+
+            if (!line_19.Contains("InitializeService;"))
+            {
+                run = new Run("Missing: " + "InitializeService;" + "\r\n");
+                run.Foreground = Brushes.Red;
+                outputwindow.Inlines.Add(run);
+                message_box_info = message_box_info + "Missing: " + "InitializeService;" + "\r\n";
+            }
+            else
+            {
+                run = new Run("Found: " + "InitializeService;" + "\r\n");
+                run.Foreground = Brushes.Green;
+                outputwindow.Inlines.Add(run);
+            }
+
+            if (!line_20.Contains("InitializeEquipment"))
+            {
+                run = new Run("Missing: " + "InitializeEquipment" + "\r\n");
+                run.Foreground = Brushes.Red;
+                outputwindow.Inlines.Add(run);
+                message_box_info = message_box_info + "Missing: " + "InitializeEquipment" + "\r\n";
+            }
+            else
+            {
+                run = new Run("Found: " + "InitializeEquipment" + "\r\n");
+                run.Foreground = Brushes.Green;
+                outputwindow.Inlines.Add(run);
+            }
+
+            if (!line_21.Contains("InitializeWeldMode"))
+            {
+                run = new Run("Missing: " + "InitializeWeldMode" + "\r\n");
+                run.Foreground = Brushes.Red;
+                outputwindow.Inlines.Add(run);
+                message_box_info = message_box_info + "Missing: " + "InitializeWeldMode" + "\r\n";
+            }
+            else
+            {
+                run = new Run("Found: " + "InitializeWeldMode" + "\r\n");
+                run.Foreground = Brushes.Green;
+                outputwindow.Inlines.Add(run);
+            }
+
+            if (!line_23.Contains("MoveJ"))
+            {
+                run = new Run("Missing: " + "MoveJ" + "\r\n");
+                run.Foreground = Brushes.Red;
+                outputwindow.Inlines.Add(run);
+                message_box_info = message_box_info + "Missing: " + "MoveJ" + "\r\n";
+            }
+            else
+            {
+                run = new Run("Found: " + "MoveJ" + "\r\n");
+                run.Foreground = Brushes.Green;
+                outputwindow.Inlines.Add(run);
+            }
+
+            if (!line_24.Contains("SetRGCodeEvents 2;"))
+            {
+                run = new Run("Missing: " + "SetRGCodeEvents 2;" + "\r\n");
+                run.Foreground = Brushes.Red;
+                outputwindow.Inlines.Add(run);
+                message_box_info = message_box_info + "Missing: " + "SetRGCodeEvent 2;" + "\r\n";
+            }
+            else
+            {
+                run = new Run("Found: " + "SetRGCodeEvents 2;" + "\r\n");
+                run.Foreground = Brushes.Green;
+                outputwindow.Inlines.Add(run);
+            }
+
+            if (!line_27.Contains("SetRGCodeEvents 1;"))
+            {
+                run = new Run("Missing: " + "SetRGCodeEvents 1;" + "\r\n");
+                run.Foreground = Brushes.Red;
+                outputwindow.Inlines.Add(run);
+                message_box_info = message_box_info + "Missing: " + "SetRGCodeEvents 1;" + "\r\n";
+            }
+            else
+            {
+                run = new Run("Found: " + "SetRGCodeEvents 1;" + "\r\n");
+                run.Foreground = Brushes.Green;
+                outputwindow.Inlines.Add(run);
+            }
+
+            if (_line_stop_number == 0)
+            {
+                run = new Run("Missing: " + "Stop;" + "\r\n");
+                run.Foreground = Brushes.Red;
+                outputwindow.Inlines.Add(run);
+                message_box_info = message_box_info + "Missing: " + "Stop;" + "\r\n";
+            }
+            else
+            {
+                run = new Run("Found: " + "Stop;" + "\r\n");
+                run.Foreground = Brushes.Green;
+                outputwindow.Inlines.Add(run);
+            }
+            
+            if (message_box_info == null)
+            {
+                MessageBox.Show("Syntax is Correct");
+            }
+            else
+            {
+                MessageBox.Show(message_box_info);
+            }
+          
+
         }
-
         #endregion
+        #endregion
+
 
     }
 }

@@ -21,7 +21,7 @@
             <RowDefinition Height="24"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition MinHeight="165" Height="150"/>
+            <RowDefinition MinHeight="170" Height="150"/>
         </Grid.RowDefinitions>
 
         <!-- Top Menu Bar -->
@@ -45,14 +45,14 @@
 
         <!-- Module Viewer Text Box -->
         <GridSplitter Grid.Column="1" Grid.Row ="1" Width="2" HorizontalAlignment="Stretch" Margin="0,20,0,20" Background="#FF8E3B1A"   />
-        <avalonEdit:TextEditor Name="ModuleViewer" Grid.Column="2" Grid.Row="1" Margin="7,7,10.2,7" Padding="5" VerticalScrollBarVisibility="Visible">
+        <avalonEdit:TextEditor Name="ModuleViewer" Grid.Column="2" Grid.Row="1" Margin="7,7,10.2,7" Padding="5" VerticalScrollBarVisibility="Visible" IsReadOnly="True">
             Open a module file to view the contents...
         </avalonEdit:TextEditor>
         <Button Content="Check Syntax" Grid.Column="2" Grid.Row="1" Margin="0,0,27.2,24.2" Height="20" Width ="100" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Check_Syntax_Click"/>
 
         <!-- Output Window -->
         <GridSplitter Grid.Row="2" Grid.ColumnSpan="3" Height="2"  VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="20,0,20.2,0" Background="#FF8E3B1A" />
-        <TextBox Grid.Column="0" Grid.Row="3"  Grid.ColumnSpan ="3" Margin="10,5,10.2,7"/>
+        <TextBlock Name="OutputWindow" Grid.Column="0" Grid.Row="3"  Grid.ColumnSpan ="3" Margin="10,27,10.2,7" Background ="White" Padding="5"/>
         <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Content="Output Window:" HorizontalAlignment="Stretch" Height="24" Margin="10,5,10.2,0" VerticalAlignment="Top" Background="Gray"/>
 
 

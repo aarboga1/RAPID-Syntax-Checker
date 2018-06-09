@@ -36,7 +36,6 @@ namespace RAPID_Syntax_Checker
         {
             InitializeComponent();
             Set_Font_Size();
-
         }
         #endregion
 
@@ -59,7 +58,19 @@ namespace RAPID_Syntax_Checker
 
         private void Check_Syntax_Click(object sender, EventArgs e)
         {
-            // Call Check Syntax Function
+            if (modulename==null)
+            {
+                MessageBox.Show("Open a file to check syntax");
+            }
+            else
+            {
+                SyntaxChecker syntaxChecker = new SyntaxChecker(modulename);
+
+                syntaxChecker.Check_Syntax(OutputWindow);
+                              
+                
+            }
+            
         }
 
         private void tencheck(object sender, RoutedEventArgs e)
@@ -105,8 +116,6 @@ namespace RAPID_Syntax_Checker
 
             SyntaxChecker syntax = new SyntaxChecker(modulename);
             syntax.write_metadata();
-
-
         }
 
         // Sets text editor text
