@@ -26,10 +26,11 @@ namespace RAPID_Syntax_Checker
     {
         #region [Variables]
         public static string modulename;
+        private string project_directory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
         #endregion
 
         #region [Constructor]
-   
+
         // Initializes Main Window
         public MainWindow()
         {
@@ -50,7 +51,9 @@ namespace RAPID_Syntax_Checker
         private void Open_Click(object sender, EventArgs e)
         {
             Open_File();
-            Set_Module_Editor_Text(modulename);
+
+            // Set module text editor to contents of meta data file
+            Set_Module_Editor_Text(project_directory + @"\MetaData\MetaFile.txt");
 
         }
 
@@ -96,8 +99,8 @@ namespace RAPID_Syntax_Checker
             }
 
             SyntaxChecker syntax = new SyntaxChecker(modulename);
+            syntax.write_metadata();
 
-            syntax.get_lines();
 
         }
 

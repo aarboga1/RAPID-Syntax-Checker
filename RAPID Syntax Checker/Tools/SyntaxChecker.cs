@@ -12,6 +12,7 @@ namespace RAPID_Syntax_Checker.Tools
     {
         #region [Variables]
         string _filepath;
+        private string project_directory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
         int _line_stop_number;
         private string line_18, line_19, line_20, line_21, line_23, line_24, line_27, line_stop;
         #endregion
@@ -21,6 +22,7 @@ namespace RAPID_Syntax_Checker.Tools
         {
             _filepath = my_filepath;
             _line_stop_number = Find_stop();
+            write_metadata();
         }
         #endregion
 
@@ -43,9 +45,9 @@ namespace RAPID_Syntax_Checker.Tools
             #endif
         }
 
+        // Function that find the line number containing "Stop;"
         public int Find_stop()
         { 
-
             string[] lines = File.ReadAllLines(_filepath);
 
             for (int i = 0; i < lines.Length; i++)
@@ -57,15 +59,27 @@ namespace RAPID_Syntax_Checker.Tools
                 }
                 
             }
-
             return 0;
-
-            
         }
 
+        // Function for writing text to metadata file
         public void write_metadata()
         {
-            
+            string metafile_dir = project_directory + @"\MetaData\MetaFile.txt";
+
+            // Clear the metadata file
+            File.Create(metafile_dir).Close();
+
+            StreamWriter streamWriter = new StreamWriter(metafile_dir);
+
+            string[] file_line = File.ReadAllLines(_filepath);
+
+            for (int i = 0; i < file_line.Length; i++ )
+            {
+                streamWriter.Write(file_line[i] + "\r\n");
+            }
+
+            streamWriter.Close();
         }
 
         #endregion
