@@ -95,7 +95,9 @@ namespace RAPID_Syntax_Checker
                 modulename = openFileDialog.FileName;
             }
 
-            Syntax syntax = new Syntax(modulename);
+            SyntaxChecker syntax = new SyntaxChecker(modulename);
+
+            syntax.get_lines();
 
         }
 
