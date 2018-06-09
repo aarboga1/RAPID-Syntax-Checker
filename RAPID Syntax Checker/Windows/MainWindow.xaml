@@ -48,7 +48,7 @@
         <avalonEdit:TextEditor Name="ModuleViewer" Grid.Column="2" Grid.Row="1" Margin="7,7,10.2,7" Padding="5" VerticalScrollBarVisibility="Visible" IsReadOnly="True">
             Open a module file to view the contents...
         </avalonEdit:TextEditor>
-        <Button Content="Check Syntax" Grid.Column="2" Grid.Row="1" Margin="0,0,27.2,24.2" Height="20" Width ="100" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Check_Syntax_Click"/>
+        <Button Content="Check Syntax" BorderBrush="Orange" Grid.Column="2" Grid.Row="1" Margin="0,0,27.2,24.2" Height="20" Width ="100" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Check_Syntax_Click"/>
 
         <!-- Output Window -->
         <GridSplitter Grid.Row="2" Grid.ColumnSpan="3" Height="2"  VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="20,0,20.2,0" Background="#FF8E3B1A" />
