@@ -109,6 +109,7 @@ namespace RAPID_Syntax_Checker.Tools
             outputwindow.Text = String.Empty;
 
             string message_box_info = null;
+            string weld_mode = null;
             Run run;
 
             if (!line_18.Contains("MoveStn1ToFloorPrint;"))
@@ -165,6 +166,9 @@ namespace RAPID_Syntax_Checker.Tools
                 run = new Run("Found: " + "InitializeWeldMode" + "\r\n");
                 run.Foreground = Brushes.Green;
                 outputwindow.Inlines.Add(run);
+
+                // Check for weld mode type 
+                weld_mode = find_weldmode(line_21);
             }
 
             if (!line_23.Contains("MoveJ"))
@@ -225,16 +229,26 @@ namespace RAPID_Syntax_Checker.Tools
             
             if (message_box_info == null)
             {
-                MessageBox.Show("Syntax is Correct");
+                MessageBox.Show("Syntax is Correct" + "\r\n" + "Using Weld Mode: " + weld_mode);
             }
             else
             {
                 MessageBox.Show(message_box_info);
             }
-          
-
         }
         #endregion
+
+        public string find_weldmode(string initialize_weld_line)
+        {
+            if (initialize_weld_line.Contains("bdSTT_Test") && initialize_weld_line.Contains("seSTT_Test") && initialize_weld_line.Contains("trkSTT"))
+            {
+                return "STT";
+            }
+            else
+            {
+                return "Unknown Weld Mode";
+            }
+        }
         #endregion
 
 
